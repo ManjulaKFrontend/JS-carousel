@@ -1,0 +1,114 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+width: 100vw;
+height: 100vh;
+display: grid;
+place-items: center;
+overflow-x:hidden ;
+}
+.slider{
+  max-width:800px;
+  height: 270px;
+  overflow: hidden;
+  user-select: none;
+  position: relative;
+}
+.slider img{
+ height: auto;
+  width: 100%;
+}
+.slider-item, .hidden{
+  display: none;
+}
+.active{
+  display: block;
+  animation: fadeAnimation 0.5s;
+}
+.slider-btns{
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+width: 80%;
+display: flex;
+justify-content: space-evenly;
+
+
+}
+@media screen and (max-width:576px){
+
+.slider-btns{
+
+  width:220%;
+  transform: translateY(50%);
+  top: 45%;
+}
+
+
+}
+
+
+
+.slider-btns button{
+  font-size: 30px;
+  font-weight: 500px;
+  background-color: rgba(0,0,0,0.5);
+  border: none;
+  color:white;
+  width: 28px;
+  height: 30px;
+  line-height: 30px;
+  cursor: pointer;
+
+
+
+
+}
+
+
+
+
+
+@keyframes fadeAnimation{
+  0%{
+
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+    transition: opacity linear;
+  }
+}
+
+.dots{
+
+  background-color: rgba(0,0,0,0.5);
+  width: 29%;
+  height: 10px;
+  position: absolute;
+  bottom: 190px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.dot{
+  width: 20px;
+  height: 3px;
+  background-color: white;
+  cursor: pointer;
+}
+.dot-active{
+  background-color:black;
+}
+@media screen and (max-width:576px){
+.dots{
+  width: 80%;
+  bottom: 140px;
+}
+
+}
+
